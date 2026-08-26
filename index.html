@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Little Something For You 🌸</title>
+    <title>A Little Something For You ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,470 +13,644 @@
 <body>
 
     <!-- =========================
-         WELCOME SECTION
+         01 — WELCOME
     ========================== -->
-    <section class="screen welcome-section" id="welcome">
 
-        <div class="welcome-content">
+    <main>
 
-            <div class="welcome-image">
-                <img src="assets/welcome-image.jpg" alt="A little something">
-            </div>
+        <section class="screen welcome-screen" id="welcome">
 
-            <p class="small-text">Hey you... 👀🌸</p>
+            <div class="screen-content">
 
-            <h1>I made a little something for you.</h1>
-
-            <p>
-                Don't worry, it's not another coding assignment 😂
-            </p>
-
-            <button class="next-btn" id="startBtn">
-                Open it 💌
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         OPENING MESSAGE
-    ========================== -->
-    <section class="screen opening-section" id="opening">
-
-        <div class="content-card">
-
-            <p class="small-text">Okay... you made it here 😂❤️</p>
-
-            <h2>A little something...</h2>
-
-            <p>
-                I wanted to make something a little different.
-                Not just another message sitting in your DMs.
-            </p>
-
-            <p>
-                So I decided to put some of my thoughts into code. 💻🌸
-            </p>
-
-            <button class="next-btn" data-next="carousel">
-                Continue →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         FLOWER / IMAGE CAROUSEL
-    ========================== -->
-    <section class="screen carousel-section" id="carousel">
-
-        <div class="section-heading">
-
-            <p class="small-text">A few things I'd like you to know 🌷</p>
-
-            <h2>Just because... ❤️</h2>
-
-        </div>
-
-
-        <div class="carousel">
-
-            <!-- Slide 1 -->
-            <div class="carousel-slide active">
-
-                <img src="assets/flower-1.png" alt="Beautiful flower">
-
-                <p>
-                    Some people just randomly become important to you...
-                    you're one of those people. 🌹
-                </p>
-
-            </div>
-
-
-            <!-- Slide 2 -->
-            <div class="carousel-slide">
-
-                <img src="assets/flower-2.png" alt="Beautiful flower">
-
-                <p>
-                    Somehow, talking to you became one of my favourite
-                    parts of the day. 🌷
-                </p>
-
-            </div>
-
-
-            <!-- Slide 3 -->
-            <!-- Slide 3 — Sad -->
-<div class="carousel-slide">
-
-    <img src="assets/flower-3.png" alt="A quiet emotional moment">
-
-    <p>
-        Sometimes people don't realize how much their words
-        or distance can affect someone who genuinely cares.
-        But I guess not everything needs an explanation. 🌧️
-    </p>
-
-</div>
-
-
-            <!-- Slide 4 -->
-            <!-- Slide 4 — Motivation -->
-<div class="carousel-slide">
-
-    <img src="assets/flower-2.png" alt="A hopeful sunrise">
-
-    <p>
-        No matter what happens, keep moving forward.
-        Better days will come, and I hope life gives you
-        plenty of reasons to smile again. 🌅
-    </p>
-
-</div>
-
-
-            <div class="carousel-controls">
-
-                <button class="carousel-btn" id="prevBtn">
-                    ←
-                </button>
-
-                <div class="carousel-dots" id="carouselDots">
-                    <!-- JavaScript will create dots here -->
+                <div class="hero-image">
+                    <img
+                        src="assets/welcome-image.jpg"
+                        alt="A little something for you"
+                    >
                 </div>
 
-                <button class="carousel-btn" id="nextBtn">
-                    →
+                <p class="eyebrow">
+                    Hey you... 👀🌸
+                </p>
+
+                <h1>
+                    I made something
+                    <span>just for you.</span>
+                </h1>
+
+                <p class="intro-text">
+                    Don't worry 😂
+                    it's not another coding assignment.
+                    I just wanted to put a few things
+                    I feel into something a little different.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    data-next="opening"
+                >
+                    Open it 💌
                 </button>
 
             </div>
 
-        </div>
-
-        <button class="next-btn" data-next="coding">
-    There's something else... 👀
-</button>
-
-    </section>
+        </section>
 
 
-    <!-- =========================
-         CODING PICKUP LINES
-    ========================== -->
-    <section class="screen coding-section" id="coding">
+        <!-- =========================
+             02 — OPENING
+        ========================== -->
 
-        <div class="section-heading">
+        <section class="screen" id="opening">
 
-            <p class="small-text">Since you're a coder too... 👀💻</p>
+            <div class="message-card">
 
-            <h2>Allow me to be a little cheesy 😂</h2>
-
-        </div>
-
-
-        <div class="coding-carousel">
-
-            <!-- Coding Line 1 -->
-            <div class="coding-card active">
-
-                <img src="assets/coding-image-1.jpg" alt="Coding">
-
-                <h3>01</h3>
-
-                <p>
-                    If you were CSS, I'd never set you to
-                    <strong>display: none;</strong>
-                    because I'd always want you right here. 😂❤️
+                <p class="eyebrow">
+                    Okay... you made it here 😂❤️
                 </p>
 
-            </div>
-
-
-            <!-- Coding Line 2 -->
-            <div class="coding-card">
-
-                <img src="assets/coding-image-2.jpg" alt="Coding">
-
-                <h3>02</h3>
+                <h2>
+                    So, where do I even start?
+                </h2>
 
                 <p>
-                    If you were a CSS property,
-                    you'd be <strong>color</strong>...
-                    because somehow you make everything brighter. 🌸
+                    I could have just sent you a long message,
+                    but you already know I like doing things
+                    a little differently. 😂
                 </p>
-
-            </div>
-
-
-            <!-- Coding Line 3 -->
-            <div class="coding-card">
-
-                <img src="assets/coding-image-3.jpg" alt="Coding">
-
-                <h3>03</h3>
 
                 <p>
-                    If you were my stylesheet,
-                    I'd never let you become
-                    <strong>display: none;</strong>. 😂❤️
+                    So I decided to turn some of my thoughts
+                    into code. 💻❤️
                 </p>
-
-            </div>
-
-
-            <!-- Coding Line 4 -->
-            <div class="coding-card">
-
-                <img src="assets/coding-image-3.jpg" alt="Coding">
-
-                <h3>04</h3>
 
                 <p>
-                    If coding is about finding the right connection...
-                    somehow, meeting you feels like I found
-                    a pretty special one. ❤️
+                    This is just my little way of showing you
+                    how much you mean to me.
                 </p>
 
-            </div>
-
-
-            <div class="coding-controls">
-
-                <button class="coding-prev" id="codingPrev">
-                    ←
-                </button>
-
-                <button class="coding-next" id="codingNext">
-                    →
+                <button
+                    class="primary-btn"
+                    data-next="appreciation"
+                >
+                    Keep going 🌸
                 </button>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <button class="next-btn" data-next="personal">
-            There's more... 👀
-        </button>
+        <!-- =========================
+             03 — APPRECIATION CAROUSEL
+        ========================== -->
 
-    </section>
+        <section class="screen" id="appreciation">
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        A few things I want you to know 🌷
+                    </p>
+
+                    <h2>
+                        You're really special to me.
+                    </h2>
+
+                </div>
+
+
+                <div class="appreciation-carousel">
+
+
+                    <!-- Slide 1 -->
+
+                    <article class="appreciation-slide active">
+
+                        <img
+                            src="assets/flower-1.png"
+                            alt="Flowers"
+                        >
+
+                        <div class="slide-content">
+
+                            <span>01</span>
+
+                            <p>
+                                Some people just randomly become
+                                important to you...
+                                somehow, you became one of those
+                                people to me. 🌹
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Slide 2 -->
+
+                    <article class="appreciation-slide">
+
+                        <img
+                            src="assets/flower-2.png"
+                            alt="Flowers"
+                        >
+
+                        <div class="slide-content">
+
+                            <span>02</span>
+
+                            <p>
+                                I genuinely love talking to you.
+                                Even the simplest conversations
+                                somehow become special when
+                                they're with you. ❤️
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Slide 3 -->
+
+                    <article class="appreciation-slide">
+
+                        <img
+                            src="assets/flower-3.png"
+                            alt="Flowers"
+                        >
+
+                        <div class="slide-content">
+
+                            <span>03</span>
+
+                            <p>
+                                You're not just someone I talk to.
+                                You've become someone I genuinely
+                                care about and appreciate. 🥹
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Slide 4 -->
+
+                    <article class="appreciation-slide">
+
+                        <img
+                            src="assets/flower-4.png"
+                            alt="Flowers"
+                        >
+
+                        <div class="slide-content">
+
+                            <span>04</span>
+
+                            <p>
+                                Out of all the people I could have
+                                met, I'm really glad life somehow
+                                brought you into mine. 🌸
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- Carousel controls -->
+
+                <div class="carousel-controls">
+
+                    <button
+                        class="carousel-btn"
+                        id="appreciationPrev"
+                        aria-label="Previous"
+                    >
+                        ←
+                    </button>
+
+                    <div
+                        class="carousel-dots"
+                        id="appreciationDots"
+                    ></div>
+
+                    <button
+                        class="carousel-btn"
+                        id="appreciationNext"
+                        aria-label="Next"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    data-next="coding"
+                >
+                    Now for the pickup lines part, i mean dem though 😂
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             04 — CODING PICKUP LINES
+        ========================== -->
+
+        <section class="screen" id="coding">
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        Since you're a coder too... 💻👀
+                    </p>
+
+                    <h2>
+                        Let me be a use lines to expresse how i feel 😂
+                    </h2>
+
+                </div>
+
+
+                <div class="coding-carousel">
+
+
+                    <!-- Coding line 1 -->
+
+                    <article class="coding-card active">
+
+                        <img
+                            src="assets/coding-image-1.jpg"
+                            alt="Coding"
+                        >
+
+                        <div class="coding-card-content">
+
+                            <span>01</span>
+
+                            <h3>
+                                display: none;
+                            </h3>
+
+                            <p>
+                                If you were CSS, I'd never set you
+                                to <code>display: none;</code>
+                                because I'd always want you
+                                right here. 😂❤️
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Coding line 2 -->
+
+                    <article class="coding-card">
+
+                        <img
+                            src="assets/coding-image-2.jpg"
+                            alt="Coding"
+                        >
+
+                        <div class="coding-card-content">
+
+                            <span>02</span>
+
+                            <h3>
+                                color: you;
+                            </h3>
+
+                            <p>
+                                If you were a CSS color,
+                                you'd be my favorite one...
+                                because somehow you make
+                                everything brighter. 🌸
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Coding line 3 -->
+
+                    <article class="coding-card">
+
+                        <img
+                            src="assets/coding-image-3.jpg"
+                            alt="Coding"
+                        >
+
+                        <div class="coding-card-content">
+
+                            <span>03</span>
+
+                            <h3>
+                                #you
+                            </h3>
+
+                            <p>
+                                If I could use a CSS selector
+                                for my favorite person,
+                                it'd be <code>#you</code>
+                                because there's only one of you. 😂❤️
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Coding line 4 -->
+
+                    <article class="coding-card">
+
+                        <img
+                            src="assets/coding-image-1.jpg"
+                            alt="Coding"
+                        >
+
+                        <div class="coding-card-content">
+
+                            <span>04</span>
+
+                            <h3>
+                                responsive ❤️
+                            </h3>
+
+                            <p>
+                                You're like responsive CSS...
+                                somehow you make every situation
+                                feel better no matter the screen size. 😂
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <div class="carousel-controls">
+
+                    <button
+                        class="carousel-btn"
+                        id="codingPrev"
+                        aria-label="Previous coding line"
+                    >
+                        ←
+                    </button>
+
+                    <div
+                        class="carousel-dots"
+                        id="codingDots"
+                    ></div>
+
+                    <button
+                        class="carousel-btn"
+                        id="codingNext"
+                        aria-label="Next coding line"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    data-next="meaning"
+                >
+                    Okay, jokes aside... 🥹
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             05 — WHAT YOU MEAN TO ME
+        ========================== -->
+
+        <section class="screen" id="meaning">
+
+            <div class="message-card">
+
+                <p class="eyebrow">
+                    Now let me be serious for a second... 🥹
+                </p>
+
+                <h2>
+                    You mean more to me than you probably realize.
+                </h2>
+
+                <div class="long-message">
+
+                    <p>
+                        I don't think I can perfectly explain
+                        when it happened, but somewhere along
+                        the way, you became one of my favorite
+                        people.
+                    </p>
+
+                    <p>
+                        I love the way we can talk, laugh,
+                        joke around and even share this little
+                        coding world and love talks together. 💻❤️
+                    </p>
+
+                    <p>
+                        You're someone I genuinely care about,
+                        and having you in my life is something
+                        I don't take for granted.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    data-next="feelings"
+                >
+                    There's more... ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             06 — MY FEELINGS
+        ========================== -->
+
+        <section class="screen" id="feelings">
+
+            <div class="message-card feelings-card">
+
+                <p class="eyebrow">
+                    If I had to put it simply... ❤️
+                </p>
+
+                <h2>
+                    I cherish you so much, and I know I am already developing feelings but ....
+                </h2>
+
+                <div class="long-message">
+
+                    <p>
+                        You're my favorite person,
+                        and I'm genuinely grateful that
+                        I get to have you in my life.
+                    </p>
+
+                    <p>
+                        I don't expect us to be perfect.
+                        I just want us to keep learning each
+                        other, understanding each other,
+                        laughing together and growing together.
+                    </p>
+
+                    <p>
+                        And honestly...
+                        I'm just happy it's you. 🥹❤️
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    data-next="final-message"
+                >
+                    One last thing... 💌
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             07 — FINAL MESSAGE
+        ========================== -->
+
+        <section class="screen" id="final-message">
+
+            <div class="message-card final-card">
+
+                <div class="final-icon">
+                    ❤️
+                </div>
+
+                <p class="eyebrow">
+                    For my favorite person...
+                </p>
+
+                <h2>
+                    I'm really glad I found you.
+                </h2>
+
+                <div class="long-message">
+
+                    <p>
+                        Out of all the random people I could
+                        have met, somehow I met you.
+                    </p>
+
+                    <p>
+                        And if I'm being completely honest,
+                        that's one of my favorite things
+                        that has happened to me.
+                    </p>
+
+                    <p>
+                        You make my days a little brighter,
+                        my conversations a little more fun,
+                        and my life a little more interesting.
+                    </p>
+
+                    <p class="highlight-text">
+                        You're my favorite person. ❤️
+                    </p>
+
+                    <p>
+                        And I love you more than these few lines
+                        of code could ever properly explain.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    data-next="question"
+                >
+                    Okay... one last question 👀
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             08 — HOW DO YOU FEEL?
+        ========================== -->
+
+        <section class="screen" id="question">
+
+            <div class="message-card question-card">
+
+                <div class="question-icon">
+                    💭
+                </div>
+
+                <p class="eyebrow">
+                    Okay... now I'm curious 👀
+                </p>
+
+                <h2>
+                    How do you feel about me?
+                </h2>
+
+                <p>
+                    We'll figure out what we want to do
+                    with your answer later. 😂❤️
+                </p>
+
+                <!--
+                    RESPONSE OPTIONS WILL BE ADDED LATER.
+                -->
+
+            </div>
+
+        </section>
+
+    </main>
 
 
     <!-- =========================
-         SWEET MESSAGE
+         JAVASCRIPT
     ========================== -->
-    <section class="screen personal-section" id="personal">
 
-        <div class="content-card">
-
-            <p class="small-text">Okay... jokes aside 🥹</p>
-
-            <h2>There's something I actually want you to know.</h2>
-
-            <div class="personal-message">
-
-            <p>
-                If I said or did anything that pissed you off,
-                I'm genuinely sorry. I never intended to make you
-                feel sad, uncomfortable, or hurt in any way.
-            </p>
-
-            <p>
-                Honestly, the situation has pained me too,
-                because I genuinely valued our friendship and
-                never wanted things between us to become awkward.
-            </p>
-
-            <p>
-                You told me to leave you alone, and even though
-                I may not fully understand what happened,
-                I'll respect that.
-            </p>
-
-            <p>
-                I know I told you that I have feelings for you,
-                but I never wanted that to change the friendship
-                we had or make you feel like you had to feel
-                the same way.
-            </p>
-
-            <p>
-                I genuinely appreciated knowing you,
-                talking with you, and sharing our little coding
-                moments together.
-            </p>
-
-            <p>
-                So I'll give you the space you asked for.
-                No pressure, no expectations.
-            </p>
-
-            <p>
-                Take care of yourself, okay? 🌸
-                I genuinely wish you the best.
-            </p>
-
-        </div>
-
-            <button class="next-btn" data-next="question">
-                One last thing... 👀
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-     FINAL MESSAGE
-========================= -->
-
-<section class="screen question-section" id="question">
-
-    <div class="question-card">
-
-        <p class="small-text">
-            One last thing... 🌸
-        </p>
-
-        <h2>
-            You don't have to reply. ❤️
-        </h2>
-
-        <p>
-            I just wanted to leave you with this message
-            so you know where I stand.
-        </p>
-
-        <div class="final-message">
-
-            <p>
-                I'm sorry if I said or did anything that upset you.
-                That was never my intention.
-            </p>
-
-            <p>
-                I genuinely cared about our friendship,
-                and I never wanted things between us to become
-                uncomfortable or strange.
-            </p>
-
-            <p>
-                I told you I had feelings for you,
-                but I never wanted you to feel pressured
-                to feel the same way.
-            </p>
-
-            <p>
-                Since you asked me to leave you alone,
-                I'll respect that.
-            </p>
-
-            <p>
-                No pressure. No expectations.
-                I just wanted to say I'm sorry
-                and wish you well.
-            </p>
-
-            <p class="final-goodbye">
-                Take care of yourself. 🌷
-            </p>
-
-        </div>
-
-        <button class="next-btn" data-next="goodbye">
-            That's all I wanted to say 🌸
-        </button>
-
-    </div>
-
-</section>
-
-
-    <!-- =========================
-         YES RESPONSE
-    ========================== -->
-    <section class="screen response-section" id="yesResponse">
-
-        <div class="response-card">
-
-            <img
-                src="assets/response-yes.jpg"
-                alt="Flowers">
-
-            <h1>WAIT... 😭❤️</h1>
-
-            <p>
-                Okay, I genuinely wasn't ready for that 😂
-            </p>
-
-            <p>
-                Thank you for being honest with me. ❤️
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         NO RESPONSE
-    ========================== -->
-    <section class="screen response-section" id="noResponse">
-
-        <div class="response-card">
-
-            <img
-                src="assets/response-no.jpg"
-                alt="Flowers">
-
-            <h1>I understand. ❤️</h1>
-
-            <p>
-                Thank you for being honest with me.
-            </p>
-
-            <p>
-                Don't worry, I'm not going to make things awkward.
-                Our friendship still means a lot to me.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CUSTOM RESPONSE SUCCESS
-    ========================== -->
-    <section class="screen response-section" id="customResponseSuccess">
-
-        <div class="response-card">
-
-            <img
-                src="assets/response-custom.jpg"
-                alt="Flowers">
-
-            <h1>Thank you. ❤️</h1>
-
-            <p>
-                I really appreciate you taking the time
-                to tell me how you feel.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
+
 </html>

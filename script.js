@@ -1,355 +1,312 @@
-/* =========================
-   SCREEN NAVIGATION
-========================= */
+/* =========================================
+   A LITTLE SOMETHING FOR YOU
+   NAVIGATION + CAROUSELS
+========================================= */
 
 const screens = document.querySelectorAll(".screen");
 
-
-function showScreen(screenId) {
-
-    const currentScreen =
-        document.querySelector(".active-screen");
-
-    const nextScreen =
-        document.getElementById(screenId);
+let currentScreen = 0;
 
 
-    // Make sure the screen exists
-    if (!nextScreen) {
-        console.log("Screen not found:", screenId);
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
+
+function showScreen(index) {
+
+    if (index < 0 || index >= screens.length) {
         return;
     }
 
-
-    // Don't do anything if we're already there
-    if (currentScreen === nextScreen) {
-        return;
-    }
-
-
-    // Hide current screen
-    if (currentScreen) {
-        currentScreen.classList.remove("active-screen");
-    }
-
-
-    // Show next screen
-    nextScreen.classList.add("active-screen");
-
-
-    // Start the new screen from the top
-    nextScreen.scrollTop = 0;
-}
-
-
-/* =========================
-   WELCOME BUTTON
-========================= */
-
-const startBtn =
-    document.getElementById("startBtn");
-
-
-if (startBtn) {
-
-    startBtn.addEventListener("click", function () {
-
-        showScreen("opening");
-
+    screens.forEach((screen) => {
+        screen.classList.remove("active");
     });
 
+    screens[index].classList.add("active");
+
+    currentScreen = index;
 }
 
 
-/* =========================
+/* =========================================
    NEXT BUTTONS
-========================= */
+   ONLY BUTTON CLICKS CHANGE SCREENS
+========================================= */
 
-const nextButtons =
-    document.querySelectorAll("[data-next]");
+document.querySelectorAll("[data-next]").forEach((button) => {
 
+    button.addEventListener("click", () => {
 
-nextButtons.forEach(function (button) {
+        const targetId = button.getAttribute("data-next");
 
-    button.addEventListener("click", function () {
+        const targetScreen =
+            document.getElementById(targetId);
 
-        const nextScreen =
-            button.getAttribute("data-next");
+        if (!targetScreen) {
+            console.warn(
+                `Screen "${targetId}" was not found.`
+            );
 
+            return;
+        }
 
-        showScreen(nextScreen);
+        const targetIndex =
+            Array.from(screens).indexOf(targetScreen);
+
+        if (targetIndex !== -1) {
+            showScreen(targetIndex);
+        }
 
     });
 
 });
 
 
-/* =========================
-   FLOWER CAROUSEL
-========================= */
+/* =========================================
+   START AT WELCOME
+========================================= */
 
-const flowerSlides =
-    document.querySelectorAll(".carousel-slide");
-
-const prevFlowerBtn =
-    document.getElementById("prevBtn");
-
-const nextFlowerBtn =
-    document.getElementById("nextBtn");
-
-const carouselDots =
-    document.getElementById("carouselDots");
+showScreen(0);
 
 
-let flowerIndex = 0;
+/* =========================================
+   CAROUSEL FUNCTION
+========================================= */
+
+function setupCarousel({
+    slideSelector,
+    dotsId,
+    prevId,
+    nextId
+}) {
+
+    const slides =
+        document.querySelectorAll(slideSelector);
+
+    const dotsContainer =
+        document.getElementById(dotsId);
+
+    const prevButton =
+        document.getElementById(prevId);
+
+    const nextButton =
+        document.getElementById(nextId);
 
 
-/* =========================
-   CREATE FLOWER DOTS
-========================= */
+    if (
+        !slides.length ||
+        !dotsContainer ||
+        !prevButton ||
+        !nextButton
+    ) {
+        return null;
+    }
 
-if (
-    flowerSlides.length > 0 &&
-    carouselDots
-) {
 
-    flowerSlides.forEach(function (slide, index) {
+    let currentSlide = 0;
+
+
+    /* CREATE DOTS */
+
+    slides.forEach((_, index) => {
 
         const dot =
-            document.createElement("span");
+            document.createElement("button");
 
-        dot.classList.add("carousel-dot");
+        dot.type = "button";
+
+        dot.className = "carousel-dot";
+
+        dot.setAttribute(
+            "aria-label",
+            `Slide ${index + 1}`
+        );
+
+        dot.addEventListener("click", () => {
+
+            currentSlide = index;
+
+            update();
+
+        });
+
+        dotsContainer.appendChild(dot);
+
+    });
 
 
-        if (index === 0) {
-            dot.classList.add("active");
-        }
+    const dots =
+        dotsContainer.querySelectorAll(
+            ".carousel-dot"
+        );
 
 
-        dot.addEventListener("click", function () {
+    /* UPDATE CAROUSEL */
 
-            flowerIndex = index;
+    function update() {
 
-            updateFlowerCarousel();
+        slides.forEach((slide, index) => {
+
+            slide.classList.toggle(
+                "active",
+                index === currentSlide
+            );
 
         });
 
 
-        carouselDots.appendChild(dot);
+        dots.forEach((dot, index) => {
 
-    });
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
 
-}
-
-
-const flowerDots =
-    document.querySelectorAll(".carousel-dot");
-
-
-/* =========================
-   UPDATE FLOWER CAROUSEL
-========================= */
-
-function updateFlowerCarousel() {
-
-    flowerSlides.forEach(function (slide) {
-
-        slide.classList.remove("active");
-
-    });
-
-
-    flowerDots.forEach(function (dot) {
-
-        dot.classList.remove("active");
-
-    });
-
-
-    if (flowerSlides[flowerIndex]) {
-
-        flowerSlides[flowerIndex]
-            .classList.add("active");
+        });
 
     }
 
 
-    if (flowerDots[flowerIndex]) {
+    /* NEXT */
 
-        flowerDots[flowerIndex]
-            .classList.add("active");
+    function next() {
+
+        currentSlide =
+            (currentSlide + 1) % slides.length;
+
+        update();
 
     }
 
-}
+
+    /* PREVIOUS */
+
+    function previous() {
+
+        currentSlide =
+            (currentSlide - 1 + slides.length) %
+            slides.length;
+
+        update();
+
+    }
 
 
-/* =========================
-   PREVIOUS FLOWER
-========================= */
-
-if (prevFlowerBtn) {
-
-    prevFlowerBtn.addEventListener(
+    nextButton.addEventListener(
         "click",
-        function () {
-
-            flowerIndex--;
-
-
-            if (flowerIndex < 0) {
-
-                flowerIndex =
-                    flowerSlides.length - 1;
-
-            }
-
-
-            updateFlowerCarousel();
-
-        }
+        next
     );
 
-}
-
-
-/* =========================
-   NEXT FLOWER
-========================= */
-
-if (nextFlowerBtn) {
-
-    nextFlowerBtn.addEventListener(
+    prevButton.addEventListener(
         "click",
-        function () {
-
-            flowerIndex++;
-
-
-            if (
-                flowerIndex >=
-                flowerSlides.length
-            ) {
-
-                flowerIndex = 0;
-
-            }
-
-
-            updateFlowerCarousel();
-
-        }
+        previous
     );
 
+
+    update();
+
+
+    return {
+        next,
+        previous
+    };
 }
 
 
-/* =========================
+/* =========================================
+   APPRECIATION CAROUSEL
+========================================= */
+
+const appreciationCarousel =
+    setupCarousel({
+
+        slideSelector:
+            ".appreciation-slide",
+
+        dotsId:
+            "appreciationDots",
+
+        prevId:
+            "appreciationPrev",
+
+        nextId:
+            "appreciationNext"
+
+    });
+
+
+/* =========================================
    CODING CAROUSEL
-========================= */
+========================================= */
 
-const codingCards =
-    document.querySelectorAll(".coding-card");
+const codingCarousel =
+    setupCarousel({
 
-const codingPrev =
-    document.getElementById("codingPrev");
+        slideSelector:
+            ".coding-card",
 
-const codingNext =
-    document.getElementById("codingNext");
+        dotsId:
+            "codingDots",
 
+        prevId:
+            "codingPrev",
 
-let codingIndex = 0;
-
-
-/* =========================
-   UPDATE CODING CAROUSEL
-========================= */
-
-function updateCodingCarousel() {
-
-    codingCards.forEach(function (card) {
-
-        card.classList.remove("active");
+        nextId:
+            "codingNext"
 
     });
 
 
-    if (codingCards[codingIndex]) {
+/* =========================================
+   KEYBOARD SUPPORT
+   Optional desktop feature
+========================================= */
 
-        codingCards[codingIndex]
-            .classList.add("active");
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.target.tagName === "INPUT" ||
+        event.target.tagName === "TEXTAREA"
+    ) {
+        return;
+    }
+
+
+    if (event.key === "ArrowRight") {
+
+        if (
+            screens[currentScreen]?.id ===
+            "appreciation"
+        ) {
+            appreciationCarousel?.next();
+        }
+
+        if (
+            screens[currentScreen]?.id ===
+            "coding"
+        ) {
+            codingCarousel?.next();
+        }
 
     }
 
-}
 
+    if (event.key === "ArrowLeft") {
 
-/* =========================
-   PREVIOUS CODING CARD
-========================= */
-
-if (codingPrev) {
-
-    codingPrev.addEventListener(
-        "click",
-        function () {
-
-            codingIndex--;
-
-
-            if (codingIndex < 0) {
-
-                codingIndex =
-                    codingCards.length - 1;
-
-            }
-
-
-            updateCodingCarousel();
-
+        if (
+            screens[currentScreen]?.id ===
+            "appreciation"
+        ) {
+            appreciationCarousel?.previous();
         }
-    );
 
-}
-
-
-/* =========================
-   NEXT CODING CARD
-========================= */
-
-if (codingNext) {
-
-    codingNext.addEventListener(
-        "click",
-        function () {
-
-            codingIndex++;
-
-
-            if (
-                codingIndex >=
-                codingCards.length
-            ) {
-
-                codingIndex = 0;
-
-            }
-
-
-            updateCodingCarousel();
-
+        if (
+            screens[currentScreen]?.id ===
+            "coding"
+        ) {
+            codingCarousel?.previous();
         }
-    );
 
-}
+    }
 
-
-/* =========================
-   INITIALIZE WEBSITE
-========================= */
-
-showScreen("welcome");
-
-updateFlowerCarousel();
-
-updateCodingCarousel();
+});
